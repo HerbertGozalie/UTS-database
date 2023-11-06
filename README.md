@@ -41,3 +41,33 @@ Tingkat normalisasi yang diterapkan harus seimbang dengan kebutuhan aplikasi dan
 1NF : tidak ada pengulangan data dalam kolom atribut tabel
 2NF : Setelah normalisasi ke 1NF, pisah table 1NF dengan aturan tidak ada atribut partial dependency dalam satu tabel
 3NF : Setelah normalisasi ke 2NF, pisah table 2NF dengan aturan tidak ada atribut transitive dependency dalam satu tabel
+
+ ## CONTOH SOAL:
+1.	Berikan contoh kondisi di mana atomicity dilanggar. Berikan analisa dampak yang diakibatkan dari pelanggaran atomicity tersebut.
+Misalkan seseorang ingin memesan 3 barang yang berbeda dari suatu toko secara online, tetapi salah satu produk tidak ada stock. Bila kondisi atomicity dilanggar, proses pemesanan akan gagal tetapi dana tetap diteruskan kepada penjual.
+2.	Jelaskan prinsip dalam ACID yang memastikan bahwa setiap transaksi harus mempertahankan konsistensi data atau Integrity Constraint
+Prinsip constraint, database harus dalam kondisi yang sesuai dengan constraint sebelum dan sesudah command dijalankan
+3.	Dalam konteks ACID, apa yang dapat diartikan sebagai prinsip utama yang menentukan apakah transaksi berhasil atau gagal sepenuhnya?
+Atomicity ,dimana proses transaksi akan dijalankan bila dapat berhasil sepenuhnya atau tidak diproses sama sekali
+4.	( ……ACID……….. isi ini) merupakan compliance (kepatuhan) untuk sistem basis data yang memiliki karakter Atomicity, Consistency, Isolation dan Durability
+5.	Jelaskan bagaimana peran foreign key dalam implementasi referential integrity.
+Penghubung yang digunakan sebagai relasi antara dua tabel. Foreign key memastikan nilai pada column di tabel yang berrelasi selalu valid & konsisten
+6.	Berdasarkan pemahaman anda, kapan kita lebih baik menerapkan “CASCADE” dibandingkan dengan “NO ACTION” pada integritas referensial? Berikan alasan beserta contoh kondisinya.
+Cascade berarti jika row di parent terhapus, maka row di child juga terhapus
+Kalo no action, parent terhapus, child tetap ada
+7.	Apa yang terjadi jika kita menerapkan ”SET NULL” pada integritas referensial?
+Kalo parent terhapus, child menjadi null
+8.	Jelaskan dan berikan contoh dari jenis-jenis dependency berikut,
+a.	Reflective
+b.	Augmentative
+c.	Transitive
+Armstrong’s axioms/properties of functional dependencies:
+    Reflexivity: If Y is a subset of X, then X→Y holds by reflexivity rule
+    Example, {roll_no, name} → name is valid.
+    Augmentation: If X → Y is a valid dependency, then XZ → YZ is also valid by the augmentation rule.
+    Example, {roll_no, name} → dept_building is valid, hence {roll_no, name, dept_name} → {dept_building, dept_name} is also valid.
+    Transitivity: If X → Y and Y → Z are both valid dependencies, then X→Z is also valid by the Transitivity rule.
+    Example, roll_no → dept_name & dept_name → dept_building, then roll_no → dept_building is also valid.
+
+9.	Jelaskan bagaimana normalisasi dapat membantu mengurangi redundansi data dan meningkatkan integritas data.
+Normalisasi mengurangi redundansi data dengan cara mengurangi adanya ulangan data yang sama dengan cara memisahkan data ke tabel yang berbeda. Integritas data dicapai dengan adanya primary key dan foreign key untuk mejaga hubungan data antar tabel
