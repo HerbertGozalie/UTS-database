@@ -38,7 +38,7 @@ Normalisasi adalah proses desain basis data yang bertujuan untuk mengurangi redu
 - Mengoptimalkan Kinerja: Normalisasi membantu mengoptimalkan kinerja basis data dengan mengurangi redundansi data dan memperbaiki struktur basis data.
 - Memfasilitasi Perubahan dan Pemeliharaan: Normalisasi membantu memfasilitasi perubahan dan pemeliharaan basis data dengan memperbaiki struktur basis data dan memastikan bahwa setiap tabel dalam basis data memenuhi kriteria normal form.
 Tingkat normalisasi yang diterapkan harus seimbang dengan kebutuhan aplikasi dan performa, sehingga tidak selalu diperlukan untuk mencapai tingkat normalisasi tertinggi (e.g., NF-5 atau BCNF) dalam setiap kasus. Tingkat normalisasi yang umum digunakan adalah:
-- 1NF : tidak ada pengulangan data dalam kolom atribut tabel
+- 1NF : tidak ada pengulangan data dalam kolom atribut tabel, dan tidak ada perhitungan
 - 2NF : Setelah normalisasi ke 1NF, pisah table 1NF dengan aturan tidak ada atribut partial dependency dalam satu tabel
 - 3NF : Setelah normalisasi ke 2NF, pisah table 2NF dengan aturan tidak ada atribut transitive dependency dalam satu tabel
 
